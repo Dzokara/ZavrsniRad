@@ -14,5 +14,7 @@ namespace AspProjekat.Application.DTO
         public string Description { get; set; }
 
         public IFormFile Image {  get; set; }
+
+        public int UserId { get; set; }
     }
 }

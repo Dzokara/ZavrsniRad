@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace AspProjekat.Application.DTO
 {
-    public class CreateCommentDto
+    internal class FileDto
     {
-       
-
-        public int BlogId { get; set; }
-
-        public string Text { get; set; }
     }
 }

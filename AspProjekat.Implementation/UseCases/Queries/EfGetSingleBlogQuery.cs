@@ -30,18 +30,20 @@ namespace AspProjekat.Implementation.UseCases.Queries
                     Description = x.Description,
                     Image = x.Image.Path,
                     Date = x.CreatedAt,
-                    Comments = x.Comments.Select(c => new CommentDto
-                    {
-                        AuthorId = c.AuthorId,
-                        Text = c.Text,
-                        BlogId = c.BlogId,
-                        User = new UserDto
+                    Comments = x.Comments
+                        .OrderByDescending(c => c.CreatedAt) // Sort comments by CreatedAt in descending order
+                        .Select(c => new CommentDto
                         {
-                            Id = c.Author.Id,
-                            Username = c.Author.Username,
-                            Email = c.Author.Email
-                        }
-                    }).ToList()
+                            AuthorId = c.AuthorId,
+                            Text = c.Text,
+                            BlogId = c.BlogId,
+                            User = new UserDto
+                            {
+                                Id = c.Author.Id,
+                                Username = c.Author.Username,
+                                Email = c.Author.Email
+                            }
+                        }).ToList()
                 })
                 .FirstOrDefault();
 

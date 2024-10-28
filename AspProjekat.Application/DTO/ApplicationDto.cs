@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace AspProjekat.Application.DTO
 {
-    public class CompanyDto
+    public class ApplicationDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Image { get; set; }
-        
+
+        public JobDto Job { get; set; }
+
         public UserDto User { get; set; }
+
+        public string File {  get; set; }
+
+        public string Letter { get; set; }
+
+        public int Status { get; set; }
+
     }
 }

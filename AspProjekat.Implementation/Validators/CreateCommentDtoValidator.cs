@@ -18,9 +18,6 @@ namespace AspProjekat.Implementation.Validators
             ctx = context;
             CascadeMode = CascadeMode.StopOnFirstFailure;
 
-            RuleFor(x => x.AuthorId)
-                .Must(ExistInAuthors).WithMessage("Author with an ID of {PropertyValue} does not exist.");
-
             RuleFor(x => x.BlogId)
                 .Must(ExistInBlogs).WithMessage("Blog with an ID of {PropertyValue} does not exist.");
 
@@ -28,10 +25,7 @@ namespace AspProjekat.Implementation.Validators
                 .NotEmpty().WithMessage("Text is required.");
 
         }
-        private bool ExistInAuthors(int authorId)
-        {
-            return ctx.Users.Any(c => c.Id == authorId);
-        }
+   
 
         private bool ExistInBlogs(int blogId)
         {

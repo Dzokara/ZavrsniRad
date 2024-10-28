@@ -53,6 +53,9 @@ namespace AspProjekat.DataAccess
             modelBuilder.Entity<CategoryJob>()
                         .HasKey(x => new { x.CategoryId, x.JobId });
 
+            modelBuilder.Entity<Application>()
+                        .HasKey(x => new { x.UserId, x.JobId });
+
 
             base.OnModelCreating(modelBuilder);
         }
@@ -111,6 +114,9 @@ namespace AspProjekat.DataAccess
 
         public DbSet<ErrorLog> ErrorLogs { get; set; }
         public DbSet<UserUseCase> UserUseCases { get; set; }
+        public DbSet<Domain.File> Files { get; set; }
+
+        public DbSet<Application> Applications { get; set; }
     }
 }
 

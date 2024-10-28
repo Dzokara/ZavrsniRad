@@ -39,7 +39,7 @@ namespace AspProjekat.DataAccess.Configurations
 
             builder.HasMany(x=>x.Testimonials).WithOne(x=>x.User).HasForeignKey(x=>x.UserId).OnDelete(DeleteBehavior.Restrict);
 
-
+            builder.HasOne(x => x.Company).WithOne(x => x.User).HasForeignKey<Company>(x => x.UserId).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

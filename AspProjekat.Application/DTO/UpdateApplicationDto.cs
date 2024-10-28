@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace AspProjekat.Application.DTO
 {
-    public class CompanyDto
+    public class UpdateApplicationDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Image { get; set; }
-        
-        public UserDto User { get; set; }
+        public int Status { get; set; }
     }
 }

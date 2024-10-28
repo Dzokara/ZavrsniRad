@@ -11,8 +11,12 @@ namespace AspProjekat.Domain
         public int ImageId { get; set; }
         public string Description { get; set; }
 
+        public int UserId { get; set; }
+
         public virtual CompanyImage Image { get; set; }
 
         public virtual ICollection<Job> Jobs { get; set; } = new HashSet<Job>();
+
+        public virtual User User { get; set; }
     }
 }
